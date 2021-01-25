@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="Syahrizaldev">
+      <meta name="description" content="Contact Page Submission">
+      <title>Contact Page Submission</title>
+      <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+      <link rel="stylesheet" type="text/css" href="./css/reset.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/awesome.min.css">
+   </head>
+
+   <body>
+      <main class="main">
+         <div class="container">
+            <section class="wrapper">
+               <div class="header">
+                  <h1 class="title title-medium">Drop Us a Line</h1>
+                  <p class="paragraph">We are here for you! How can we help?</p>
+               </div>
+               <form name="contact" method="POST" action="./thanks.html" class="form" data-netlify-recaptcha="true"
+                  data-netlify="true" onsubmit="return validateForm(this)">
+                  <div class="form-control">
+                     <label for="fullname" class="input-label">Name</label>
+                     <input type="text" name="fullname" class="input-field" placeholder="John Smith" autofocus>
+                     <span class="input-check">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                     </span>
+                     <small class="input-alert"></small>
+                  </div>
+                  <div class="form-control">
+                     <label for="email" class="input-label">Email</label>
+                     <input type="email" name="email" class="input-field" placeholder="johnsmith@mail.com">
+                     <span class="input-check">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                     </span>
+                     <small class="input-alert"></small>
+                  </div>
+                  <div class="form-control">
+                     <label for="subject" class="input-label">Subject</label>
+                     <input type="text" name="subject" class="input-field" placeholder="Enter your subject">
+                     <span class="input-check">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                     </span>
+                     <small class="input-alert"></small>
+                  </div>
+                  <div class="form-control">
+                     <label for="message" class="input-label">Message</label>
+                     <textarea name="message" class="input-field" rows="4"
+                        placeholder="Enter your message here"></textarea>
+                     <span class="input-check">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                     </span>
+                     <small class="input-alert"></small>
+                  </div>
+                  <div class="form-control">
+                     <label for="file" class="input-label">Attachment</label>
+                     <input type="file" name="file" class="realfile" hidden="hidden">
+                     <button type="button" class="input-file">Choose a file (optional)</button>
+                  </div>
+                  <div class="form-control">
+                     <div data-netlify-recaptcha="true"></div>
+                  </div>
+                  <div class="form-control">
+                     <input type="submit" name="submit" class="input-submit" value="Send Request">
+                  </div>
+               </form>
+            </section>
+         </div>
+      </main>
+
+
+      <script src="./js/script.js" defer></script>
+      <script src="./js/validate.js" defer></script>
+   </body>
+
+</html>
