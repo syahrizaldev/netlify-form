@@ -22,13 +22,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@media only screen and (max-width: 425px) {
-  html {
-    font-size: 87.5%;
-    font-size-adjust: 100%;
-  }
-}
-
 *,
 *::before,
 *::after {
@@ -80,6 +73,13 @@ video {
   height: auto;
   padding: 0 2rem;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 425px) {
+  .container {
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
 }
 
 .btn {
@@ -137,6 +137,12 @@ video {
   background: var(--color-purple);
   -webkit-box-shadow: var(--shadow-medium);
           box-shadow: var(--shadow-medium);
+}
+
+.btn-wide {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .title {
@@ -222,8 +228,8 @@ video {
 
 .main .wrapper .form .input-control .input-label {
   font-family: inherit;
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 0.9rem;
+  font-weight: 500;
   line-height: inherit;
   color: var(--color-black);
   text-transform: capitalize;
@@ -239,9 +245,10 @@ video {
   width: 100%;
   height: auto;
   padding: 0.75rem 1.25rem;
-  margin: 0.25rem 0;
+  margin-bottom: 0.3rem;
   outline: none;
-  border: 2px solid transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
   border-radius: 0.25rem;
   color: var(--color-black);
   background: var(--color-white);
@@ -272,13 +279,13 @@ video {
   text-rendering: optimizeLegibility;
 }
 
-.main .wrapper .form .input-control .input-check .fas {
+.main .wrapper .form .input-control .input-check .ion {
   position: absolute;
   display: block;
   content: '';
-  top: 2.5rem;
+  top: 2rem;
   right: 1.25rem;
-  font-size: 1rem;
+  font-size: 1.35rem;
   line-height: inherit;
   opacity: 0;
   visibility: hidden;
@@ -302,7 +309,7 @@ video {
   border-bottom: 2px solid var(--color-red);
 }
 
-.main .wrapper .form .input-control.error .input-check .fa-exclamation-circle {
+.main .wrapper .form .input-control.error .input-check .ion-md-information-circle {
   opacity: 1;
   visibility: visible;
   color: var(--color-red);
@@ -317,7 +324,7 @@ video {
   border-bottom: 2px solid var(--color-green);
 }
 
-.main .wrapper .form .input-control.success .input-check .fa-check-circle {
+.main .wrapper .form .input-control.success .input-check .ion-md-checkmark-circle {
   opacity: 1;
   visibility: visible;
   color: var(--color-green);

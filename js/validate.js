@@ -1,5 +1,5 @@
-// Form Validation Function
 function validateForm(form) {
+   // Validate Name
    if (form.fullname.value.trim() === '') {
       setError(form.fullname, 'Name cannot be blank!');
       return false;
@@ -7,6 +7,7 @@ function validateForm(form) {
       setSuccess(form.fullname);
    }
 
+   // Validate Email
    if (form.email.value.trim() === '') {
       setError(form.email, 'Email cannot be blank!');
       return false;
@@ -14,6 +15,15 @@ function validateForm(form) {
       setSuccess(form.email);
    }
 
+   // Validate Email
+   if (!validEmail(form.email.value.trim())) {
+      setError(form.email, 'Email is not valid!');
+      return false;
+   } else {
+      setSuccess(form.email);
+   }
+
+   // Validate Subject
    if (form.subject.value.trim() === '') {
       setError(form.subject, 'Subject cannot be blank!');
       return false;
@@ -21,6 +31,7 @@ function validateForm(form) {
       setSuccess(form.subject);
    }
 
+   // Validate Message
    if (form.message.value.trim() === '') {
       setError(form.message, 'Message cannot be blank!');
       return false;
