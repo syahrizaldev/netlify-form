@@ -1,17 +1,21 @@
-$color-white: #ffffff;
-$color-light: #f1f5f8;
-$color-black: #121212;
-$color-night: #001632;
+// Section: Variables
+:root {
+   --color-white: hsl(0, 0%, 100%);
+   --color-light: hsl(210, 40%, 98%);
+   --color-black: hsl(0, 0%, 10%);
+   --color-night: hsl(214, 100%, 10%);
 
-$color-red: #e53935;
-$color-blue: #2196f3;
-$color-grey: #666666;
-$color-green: #4caf50;
-$color-purple: #9c27b0;
+   --color-red: hsl(1, 77%, 55%);
+   --color-grey: hsl(0, 0%, 40%);
+   --color-blue: hsl(207, 90%, 54%);
+   --color-green: hsl(123, 41%, 45%);
+   --color-orange: hsl(33, 100%, 49%);
+   --color-purple: hsl(291, 64%, 42%);
 
-$shadow-normal: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-$shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+   --shadow-normal: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
 
 html {
    font-size: 100%;
@@ -45,8 +49,8 @@ body {
    font-size: 1rem;
    font-weight: normal;
    line-height: 1.5;
-   color: $color-black;
-   background: $color-white;
+   color: var(--color-black);
+   background: var(--color-white);
 }
 
 a,
@@ -69,6 +73,7 @@ video {
    object-fit: cover;
 }
 
+// Section: Elements
 .container {
    max-width: 80rem;
    width: 100%;
@@ -82,30 +87,80 @@ video {
    font-size: 1rem;
    font-weight: 500;
    line-height: inherit;
+   cursor: pointer;
+   border: none;
+   outline: none;
+   border-radius: 0.25rem;
    text-transform: capitalize;
    text-rendering: optimizeLegibility;
+   transition: all 0.35s ease;
 
-   &-confirm {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      outline: none;
-      border-radius: 2rem;
-      color: $color-white;
-      background: $color-purple;
-      box-shadow: $shadow-medium;
+   &-primary {
+      padding: 0.65rem 1.25rem;
+      color: var(--color-white);
+      background: var(--color-blue);
+      box-shadow: var(--shadow-medium);
+   }
+
+   &-success {
+      padding: 0.65rem 1.25rem;
+      color: var(--color-white);
+      background: var(--color-green);
+      box-shadow: var(--shadow-medium);
+   }
+
+   &-warning {
+      padding: 0.65rem 1.25rem;
+      color: var(--color-white);
+      background: var(--color-orange);
+      box-shadow: var(--shadow-medium);
+   }
+
+   &-danger {
+      padding: 0.65rem 1.25rem;
+      color: var(--color-white);
+      background: var(--color-red);
+      box-shadow: var(--shadow-medium);
+   }
+
+   &-rounded {
+      padding: 0.65rem 1.25rem;
+      border-radius: 3rem;
+      color: var(--color-white);
+      background: var(--color-purple);
+      box-shadow: var(--shadow-medium);
    }
 }
 
 .title {
    font-family: inherit;
-   line-height: inherit;
+   margin: 0.75rem 0;
+   color: var(--color-black);
    text-transform: capitalize;
    text-rendering: optimizeLegibility;
 
+   &-normal {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+   }
+
    &-medium {
-      font-size: 2rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.25;
+   }
+
+   &-large {
+      font-size: 1.875rem;
       font-weight: 700;
-      color: $color-black;
+      line-height: 1.25;
+   }
+
+   &-extra {
+      font-size: 2.45rem;
+      font-weight: 700;
+      line-height: 1.25;
    }
 }
 
@@ -114,12 +169,12 @@ video {
    font-size: 1rem;
    font-weight: normal;
    line-height: inherit;
-   color: $color-black;
+   color: var(--color-black);
    text-transform: unset;
    text-rendering: optimizeLegibility;
 }
 
-// Main
+// // Section: Layout
 .main {
    .wrapper {
       max-width: 65rem;
@@ -130,8 +185,8 @@ video {
       border: none;
       outline: none;
       border-radius: 0.35rem;
-      background: $color-white;
-      box-shadow: $shadow-large;
+      background: var(--color-white);
+      box-shadow: var(--shadow-large);
 
       .header {
          width: 100%;
@@ -147,7 +202,7 @@ video {
          height: auto;
          margin: 0 auto;
 
-         &-control {
+         .input-control {
             position: relative;
             width: 100%;
             height: auto;
@@ -160,7 +215,7 @@ video {
                font-size: 1rem;
                font-weight: normal;
                line-height: inherit;
-               color: $color-black;
+               color: var(--color-black);
                text-transform: capitalize;
                text-rendering: optimizeLegibility;
             }
@@ -178,9 +233,9 @@ video {
                outline: none;
                border: 2px solid transparent;
                border-radius: 0.25rem;
-               color: $color-black;
-               background: $color-white;
-               box-shadow: $shadow-medium;
+               color: var(--color-black);
+               background: var(--color-white);
+               box-shadow: var(--shadow-medium);
                text-transform: unset;
                text-rendering: optimizeLegibility;
             }
@@ -197,9 +252,9 @@ video {
                border: none;
                outline: none;
                border-radius: 0.25rem;
-               color: $color-grey;
-               background: $color-white;
-               box-shadow: $shadow-medium;
+               color: var(--color-grey);
+               background: var(--color-white);
+               box-shadow: var(--shadow-medium);
                text-align: left;
                text-transform: unset;
                text-rendering: optimizeLegibility;
@@ -226,39 +281,20 @@ video {
                font-size: 0.875rem;
                font-weight: normal;
                line-height: inherit;
-               color: $color-red;
+               color: var(--color-red);
                opacity: 0;
                visibility: hidden;
             }
 
-            .input-submit {
-               font-family: inherit;
-               font-size: 1rem;
-               font-weight: 500;
-               line-height: inherit;
-               cursor: pointer;
-               width: 100%;
-               height: auto;
-               padding: 0.75rem 1.25rem;
-               border: none;
-               outline: none;
-               border-radius: 2rem;
-               color: $color-white;
-               background: $color-purple;
-               box-shadow: $shadow-medium;
-               text-transform: capitalize;
-               text-rendering: optimizeLegibility;
-            }
-
             &.error {
                .input-field {
-                  border-bottom: 2px solid $color-red;
+                  border-bottom: 2px solid var(--color-red);
                }
 
                .input-check .fa-exclamation-circle {
                   opacity: 1;
                   visibility: visible;
-                  color: $color-red;
+                  color: var(--color-red);
                }
 
                .input-alert {
@@ -269,13 +305,13 @@ video {
 
             &.success {
                .input-field {
-                  border-bottom: 2px solid $color-green;
+                  border-bottom: 2px solid var(--color-green);
                }
 
                .input-check .fa-check-circle {
                   opacity: 1;
                   visibility: visible;
-                  color: $color-green;
+                  color: var(--color-green);
                }
             }
          }
@@ -318,7 +354,7 @@ video {
          width: 100%;
          height: 100%;
          z-index: -2;
-         background: $color-night;
+         background: var(--color-night);
       }
 
       &-content {
@@ -336,9 +372,9 @@ video {
          border: none;
          outline: none;
          border-radius: 0.25rem;
-         color: $color-black;
-         background: $color-white;
-         box-shadow: $shadow-large;
+         color: var(--color-black);
+         background: var(--color-white);
+         box-shadow: var(--shadow-large);
 
          img.greeting {
             display: block;

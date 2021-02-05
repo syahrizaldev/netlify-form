@@ -1,4 +1,3 @@
-'use strict';
 // File Upload Function
 (function () {
    const realFile = document.querySelector('.realfile');

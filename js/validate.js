@@ -1,4 +1,3 @@
-'use strict';
 // Form Validation Function
 function validateForm(form) {
    if (form.fullname.value.trim() === '') {
@@ -34,16 +33,16 @@ function validateForm(form) {
 
 // Set Error Message
 function setError(input, errorMsg) {
-   const formControl = input.parentElement;
-   const inputAlert = formControl.querySelector('.input-alert');
-   formControl.className = 'form-control error';
+   const inputControl = input.parentElement;
+   const inputAlert = inputControl.querySelector('.input-alert');
+   inputControl.className = 'input-control error';
    inputAlert.innerHTML = errorMsg;
 }
 
 // Set Success Message
 function setSuccess(input) {
-   const formControl = input.parentElement;
-   formControl.className = 'form-control success';
+   const inputControl = input.parentElement;
+   inputControl.className = 'input-control success';
 }
 
 // Set Validate Email
